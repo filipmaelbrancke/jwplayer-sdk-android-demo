@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jwplayer-sdk-android-demo.iml" filepath="$PROJECT_DIR$/jwplayer-sdk-android-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jwplayer-android-sdk-2.1.1+142/jwplayer-android-sdk-2.1.1+142.iml" filepath="$PROJECT_DIR$/jwplayer-android-sdk-2.1.1+142/jwplayer-android-sdk-2.1.1+142.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jwplayer-sdk-android-demo-fork.iml" filepath="$PROJECT_DIR$/jwplayer-sdk-android-demo-fork.iml" />
     </modules>
   </component>
 </project>

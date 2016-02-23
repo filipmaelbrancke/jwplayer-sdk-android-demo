@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">JW Player SDK for Android Demo</string>
+    <string name="title_videoitem_list">VideoItems</string>
+    <string name="title_videoitem_detail">VideoItem Detail</string>
 </resources>
