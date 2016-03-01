@@ -8,10 +8,13 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
 import com.longtailvideo.jwplayer.JWPlayerView;
 import com.longtailvideo.jwplayer.events.listeners.VideoPlayerEvents;
+import com.longtailvideo.jwplayer.media.ads.Ad;
+import com.longtailvideo.jwplayer.media.ads.AdBreak;
+import com.longtailvideo.jwplayer.media.ads.AdSource;
 import com.longtailvideo.jwplayer.media.playlists.PlaylistItem;
+import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity implements VideoPlayerEvents.OnFullscreenListener {
 
@@ -39,7 +42,22 @@ public class MainActivity extends AppCompatActivity implements VideoPlayerEvents
 		mEventHandler = new JWEventHandler(mPlayerView, outputTextView);
 
 		// Load a media source
-		PlaylistItem pi = new PlaylistItem("http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8");
+		//PlaylistItem pi = new PlaylistItem("http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8");
+
+		final int timestamp = (int) (System.currentTimeMillis() / 1000L);
+		Ad ad = new Ad(AdSource.IMA, "https://ads-pebblemedia.adhese.com/ad/sl_test-sporza_preroll_-preroll?t=" + timestamp);
+
+		AdBreak adBreak = new AdBreak("pre", ad);
+		LinkedList<AdBreak> schedule = new LinkedList<>();
+		schedule.add(adBreak);
+
+		PlaylistItem pi = new PlaylistItem.Builder()
+			.file(
+				"http://vod.stream.vrt.be/mediazone_canvas/_definst_/smil:2016/01/mz-ast-0ae9ee02-9cae-48de-9a71-9ba5d1c7d29d/video.smil/playlist.m3u8")
+			.adSchedule(schedule)
+			.build();
+
+
 		mPlayerView.load(pi);
 	}
 
